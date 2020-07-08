@@ -1,0 +1,14 @@
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/EPLQueries.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/Main.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/EsperEnvironment.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/util/PerformanceFileBuilder.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/KafkaAdaptedEsper.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/event/SpeedEvent.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/EsperCustomAdapterConfig.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/FileEsperCustomAdapter.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/util/Projector.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/EsperCustomAdapter.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/event/RawEvent.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/KafkaEsperCustomAdapter.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/util/FileComparator.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/KafkaAdaptedEsperEnvironmentBuilder.java
