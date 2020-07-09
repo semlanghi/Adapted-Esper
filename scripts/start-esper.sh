@@ -2,6 +2,13 @@
 
 export _JAVA_OPTIONS="-Xmx1g"
 
+if [ -z "$PROJECT_DIR" ]
+then
+      PROJECT_DIR="/root/ICEP-esper/ICEP-esper"
+else
+      echo "PROJECT_DIR is $PROJECT_DIR"
+fi
+
 bootstrap_opt=""
 topic_opt=""
 exp_opt=""
