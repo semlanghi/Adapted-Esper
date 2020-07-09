@@ -27,7 +27,7 @@ public class KafkaAdaptedEsper {
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         props.put(EsperCustomAdapterConfig.TOPIC_NAME, parameterTool.get("topic", "linear-road-data"));
         props.put(EsperCustomAdapterConfig.EVENT_NAME, "SpeedEvent");
-        props.put(EsperCustomAdapterConfig.INPUT_FILE_NAME, "/Users/samuelelanghi/Desktop/linear2.csv");
+        props.put(EsperCustomAdapterConfig.INPUT_FILE_NAME, "/root/linear2.csv");
         File temp = new File("result/results.csv");
         if(!temp.exists())
             temp = new File("scripts/result/results.csv");
