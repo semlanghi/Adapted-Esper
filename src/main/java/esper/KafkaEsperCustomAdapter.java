@@ -92,11 +92,11 @@ public class KafkaEsperCustomAdapter<K,V,E> implements EsperCustomAdapter<V,E>{
         Thread pollingThread = new Thread(new Runnable() {
             @Override
             public void run() {
-                RateLimiter limiter = RateLimiter.create(eventsPerSecond);
+                //RateLimiter limiter = RateLimiter.create(eventsPerSecond);
                 while ((maxEvents == -1) || counter < maxEvents) {
                     ConsumerRecords<K, V> records = consumer.poll(Duration.ofSeconds(2));
                     records.forEach(record -> {
-                        limiter.acquire();
+                        //limiter.acquire();
                         try {
                             writer.write(record.value().toString() + "\n");
                             writer.flush();
