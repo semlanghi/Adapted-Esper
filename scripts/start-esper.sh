@@ -41,7 +41,7 @@ do
       echo $query;;
     r )
       rate=$OPTARG
-      rate_opt="--query"
+      rate_opt="--rate"
       echo $rate;;
     * )
       echo "$arg is an invalid flag";;
