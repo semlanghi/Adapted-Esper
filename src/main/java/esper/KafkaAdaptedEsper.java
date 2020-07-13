@@ -10,6 +10,7 @@ import org.apache.kafka.common.serialization.IntegerDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.UUID;
 
@@ -27,13 +28,16 @@ public class KafkaAdaptedEsper {
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         props.put(EsperCustomAdapterConfig.TOPIC_NAME, parameterTool.get("topic", "linear-road-data"));
         props.put(EsperCustomAdapterConfig.EVENT_NAME, "SpeedEvent");
-        props.put(EsperCustomAdapterConfig.INPUT_FILE_NAME, "/root/linear2.csv");
-        File temp = new File("result/results.csv");
-        if(!temp.exists())
+        props.put(EsperCustomAdapterConfig.INPUT_FILE_NAME, "/Users/samuelelanghi/Desktop/linear2.csv");
+        File temp = new File("result/");
+        if(temp.exists()){
+            temp = new File("result/results.csv");
+        }else{
             temp = new File("scripts/result/results.csv");
+        }
         props.put(EsperCustomAdapterConfig.PERF_FILE_NAME, temp.getPath());
         props.put(EsperCustomAdapterConfig.EXPERIMENT_ID, parameterTool.get("exp", "exp1") );
-        props.put(EsperCustomAdapterConfig.STATEMENT_NAME, parameterTool.get("query", "Delta"));
+        props.put(EsperCustomAdapterConfig.STATEMENT_NAME, parameterTool.get("query", "Aggregate"));
 
 
         KafkaAdaptedEsperEnvironmentBuilder<Integer,String, SpeedEvent> builder = new KafkaAdaptedEsperEnvironmentBuilder<>(props);
@@ -43,10 +47,13 @@ public class KafkaAdaptedEsper {
         builder.withBeanType(SpeedEvent.class)
                 .addStatement(props.getProperty(EsperCustomAdapterConfig.STATEMENT_NAME))
                 .buildRuntime(true)
-                .adaptKafka(props, Long.parseLong(parameterTool.get("maxevents", "10000"))).start(s -> {
-                    String[] data = s.replace("[","").replace("]","").split(",");
+                .adaptKafka(props, Duration.ofSeconds(Long.parseLong(parameterTool.get("duration", "10")))).start(s -> {
+                    String[] data = s.replace("[","").replace("]","").split(", ");
                     long ts = Long.parseLong(data[8].trim());
                     SpeedEvent event = new SpeedEvent(data[0].trim(), ts,Integer.parseInt(data[1].trim()));
+                    if(Long.parseLong(data[0].trim())==-1){
+                       return new Pair<>(event,-1L);
+                    }
                     return new Pair<>(event, ts);
                 });
 

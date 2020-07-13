@@ -71,7 +71,7 @@ public class FileEsperCustomAdapter<E> implements EsperCustomAdapter<String,E>{
 
             PerformanceFileBuilder performanceFileBuilder = new PerformanceFileBuilder(props.getProperty(EsperCustomAdapterConfig.PERF_FILE_NAME),"esper", 1);
             performanceFileBuilder.register(props.getProperty(EsperCustomAdapterConfig.STATEMENT_NAME), throughput,
-                    props.getProperty(EsperCustomAdapterConfig.EXPERIMENT_ID), false, counter);
+                    props.getProperty(EsperCustomAdapterConfig.EXPERIMENT_ID), false, counter, diff/1000);
             performanceFileBuilder.close();
 
             bufferedReader.close();

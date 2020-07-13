@@ -28,8 +28,8 @@ public class PerformanceFileBuilder {
         this.parallelism = parallelism;
     }
 
-    public void register(String expType, double throughput, String expName, boolean cluster, long inputSize){
-        String[] row = new String[]{expType, expName, String.valueOf(parallelism), platform, String.valueOf(throughput), String.valueOf(cluster), String.valueOf(inputSize)};
+    public void register(String expType, double throughput, String expName, boolean cluster, long inputSize, long secondsPassed){
+        String[] row = new String[]{expType, expName, String.valueOf(parallelism), platform, String.valueOf(throughput), String.valueOf(cluster), String.valueOf(inputSize), String.valueOf(secondsPassed)};
         writer.writeNext(row);
         try {
             writer.flush();

@@ -4,6 +4,7 @@ import com.espertech.esper.common.internal.collection.Pair;
 import com.espertech.esper.runtime.client.EPRuntime;
 import com.espertech.esper.runtime.client.EPUndeployException;
 
+import java.time.Duration;
 import java.util.Properties;
 import java.util.function.Function;
 
@@ -33,6 +34,11 @@ public class EsperEnvironment<K,V,E> {
 
     public EsperEnvironment<K,V,E> adaptKafka(Properties props, long maxEvents, double eventsPerSecond){
         this.adapter = new KafkaEsperCustomAdapter<>(props, runtime.getEventService(), maxEvents, eventsPerSecond);
+        return this;
+    }
+
+    public EsperEnvironment<K,V,E> adaptKafka(Properties props, Duration minutes){
+        this.adapter = new KafkaEsperCustomAdapter<>(props, runtime.getEventService(), minutes);
         return this;
     }
 

@@ -82,11 +82,14 @@ public class KafkaAdaptedEsperEnvironmentBuilder<K,V,E> {
         EPStatement statement = runtime.getDeploymentService().getStatement(deployment.getDeploymentId(), statementName);
 
 
-        File temp = new File("result/outputs/Output-Esper-"+statementName+"-"
-                +props.getProperty(EsperCustomAdapterConfig.EXPERIMENT_ID)+".txt");
-        if(!temp.exists())
+        File temp = new File("result/outputs/");
+        if(temp.exists()){
+            temp = new File("result/outputs/Output-Esper-"+statementName+"-"
+                    +props.getProperty(EsperCustomAdapterConfig.EXPERIMENT_ID)+".txt");
+        }else{
             temp = new File("scripts/result/outputs/Output-Esper-"+statementName+"-"
                     +props.getProperty(EsperCustomAdapterConfig.EXPERIMENT_ID)+".txt");
+        }
         try {
 
             File finalTemp = temp;
