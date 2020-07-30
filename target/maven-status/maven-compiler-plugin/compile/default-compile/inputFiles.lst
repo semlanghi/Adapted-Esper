@@ -2,7 +2,7 @@
 /Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/Main.java
 /Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/EsperEnvironment.java
 /Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/util/PerformanceFileBuilder.java
-/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/KafkaAdaptedEsper.java
+/Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/KafkaAdaptedEsper.java
 /Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/event/SpeedEvent.java
 /Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/EsperCustomAdapterConfig.java
 /Users/samuelelanghi/Documents/projects/ICEP-esper/src/main/java/esper/FileEsperCustomAdapter.java

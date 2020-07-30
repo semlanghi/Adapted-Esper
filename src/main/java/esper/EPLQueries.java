@@ -51,13 +51,6 @@ public class EPLQueries {
                     "   @name('Delta') select * from ResultStream;"
             ;
 
-//    public static final String epl3 =
-//            "   create context SegmentedByKey partition by key from SpeedEvent; \n" +
-//                    "   context SegmentedByKey " +
-//                    "   insert into ResultStream select avg(value) as value, first(timestamp) as first_ts, last(timestamp) as last_ts, key as key, count(*) as count from SpeedEvent#expr_batch(Math.abs(first(value) - value) < 5,false) ;" +
-//                    "   @name('Delta')" +
-//                    "   select value, first_ts, last_ts,count, key from ResultStream(count>=2)" ;
-
     public static final String epl =
             "   create context SegmentedByKey partition by key from SpeedEvent; \n" +
             "   context SegmentedByKey " +
