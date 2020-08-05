@@ -19,9 +19,11 @@ import java.util.Properties;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.logging.Logger;
 
 public class KafkaEsperCustomAdapter<K,V,E> implements EsperCustomAdapter<V,E>{
 
+    public static final Logger LOGGER = Logger.getLogger(KafkaEsperCustomAdapter.class.getName());
 
     private final KafkaConsumer<K,V> consumer;
     private final EventSender sender;
@@ -110,6 +112,9 @@ public class KafkaEsperCustomAdapter<K,V,E> implements EsperCustomAdapter<V,E>{
     private void send(Pair<E,Long> eventTimestamp){
         sender.sendEvent(eventTimestamp.getFirst());
         counter++;
+        if(counter%1000000==0){
+            LOGGER.info("Arrived "+counter+" th events.");
+        }
     }
 
 

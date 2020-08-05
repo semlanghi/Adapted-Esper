@@ -66,5 +66,5 @@ done
 # Execute producer
 echo "Start loading:"
 echo ${bootstrap_opt} ${bootstrap} ${topic_opt} ${topic} ${exp_opt} ${exp} ${maxevents_opt} ${maxevents} ${query_opt} ${query} ${rate_opt} ${rate}
-java -Xmx20g -cp $PROJECT_DIR/target/ICEP-esper-1.0-SNAPSHOT-jar-with-dependencies.jar esper.KafkaAdaptedEsper ${bootstrap_opt} ${bootstrap} ${topic_opt} ${topic} ${exp_opt} ${exp} ${maxevents_opt} ${maxevents} ${query_opt} ${query} ${rate_opt} ${rate} ${duration_opt} ${duration}
+java -Xmx20g -cp $PROJECT_DIR/target/ICEP-esper-1.0-SNAPSHOT-jar-with-dependencies.jar esper.KafkaAdaptedEsper ${bootstrap_opt} ${bootstrap} ${topic_opt} ${topic} ${exp_opt} ${exp} ${maxevents_opt} ${maxevents} ${query_opt} ${query} ${rate_opt} ${rate} ${duration_opt} ${duration} &> esper.out &
 echo "Producer finished"
