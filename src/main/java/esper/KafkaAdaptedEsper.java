@@ -47,7 +47,7 @@ public class KafkaAdaptedEsper {
         builder.withBeanType(SpeedEvent.class)
                 .addStatement(props.getProperty(EsperCustomAdapterConfig.STATEMENT_NAME))
                 .buildRuntime(true)
-                .adaptKafka(props, Duration.ofSeconds(Long.parseLong(parameterTool.get("duration", "10")))).start(s -> {
+                .adaptKafka(props, ).start(s -> {
                     String[] data = s.replace("[","").replace("]","").split(", ");
                     long ts = Long.parseLong(data[8].trim());
                     SpeedEvent event = new SpeedEvent(data[0].trim(), ts,Integer.parseInt(data[1].trim()));
