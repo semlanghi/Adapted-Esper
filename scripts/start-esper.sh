@@ -4,7 +4,7 @@
 
 if [ -z "$PROJECT_DIR" ]
 then
-      PROJECT_DIR="/root/ICEP-esper/ICEP-esper"
+      PROJECT_DIR="/home/hadoop/Samuele/ICEP-esper"
 else
       echo "PROJECT_DIR is $PROJECT_DIR"
 fi
