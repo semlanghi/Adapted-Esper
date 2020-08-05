@@ -29,12 +29,12 @@ public class KafkaAdaptedEsper {
         props.put(EsperCustomAdapterConfig.TOPIC_NAME, parameterTool.get("topic", "linear-road-data"));
         props.put(EsperCustomAdapterConfig.EVENT_NAME, "SpeedEvent");
         props.put(EsperCustomAdapterConfig.INPUT_FILE_NAME, "/Users/samuelelanghi/Desktop/linear2.csv");
-        File temp = new File("result/");
-        if(temp.exists()){
-            temp = new File("result/results.csv");
-        }else{
-            temp = new File("scripts/result/results.csv");
-        }
+        //File temp = new File("");
+        //if(temp.exists()){
+        File temp = new File("esper-results.csv");
+        //}else{
+          //  temp = new File("esper-results.csv");
+        //}
         props.put(EsperCustomAdapterConfig.PERF_FILE_NAME, temp.getPath());
         props.put(EsperCustomAdapterConfig.EXPERIMENT_ID, parameterTool.get("exp", "exp1") );
         props.put(EsperCustomAdapterConfig.STATEMENT_NAME, parameterTool.get("query", "Aggregate"));
