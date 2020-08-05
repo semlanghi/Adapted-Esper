@@ -106,7 +106,7 @@ public class KafkaAdaptedEsperEnvironmentBuilder<K,V,E> {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    LOGGER.info("Outputted "+ count++ +"th event.");
+                    //LOGGER.info("Outputted "+ count++ +"th event.");
                 }
             });
         } catch (Exception e) {
