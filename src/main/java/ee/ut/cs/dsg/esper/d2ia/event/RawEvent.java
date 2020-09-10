@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package event;
+package ee.ut.cs.dsg.esper.d2ia.event;
 
 import java.io.Serializable;
 

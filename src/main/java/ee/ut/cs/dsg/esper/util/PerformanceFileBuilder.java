@@ -1,4 +1,4 @@
-package esper.util;
+package ee.ut.cs.dsg.esper.util;
 
 import com.opencsv.CSVWriter;
 
@@ -18,7 +18,7 @@ public class PerformanceFileBuilder {
             if(!file.exists()){
                 file.createNewFile();
                 this.writer = new CSVWriter(new FileWriter(file, true));
-                String[] firstRow = new String[]{"Type", "Experiment-Name","Parallelism", "Platform", "Throughput", "OnCluster"};
+                String[] firstRow = new String[]{"Type", "Experiment-Name","Parallelism", "Platform", "Throughput", "OnCluster", "InputSize", "SecondsPassed"};
                 this.writer.writeNext(firstRow);
                 this.writer.flush();
             }
@@ -30,8 +30,8 @@ public class PerformanceFileBuilder {
         this.parallelism = parallelism;
     }
 
-    public void register(String expType, double throughput, String expName, boolean cluster, long inputSize, long secondsPassed){
-        String[] row = new String[]{expType, expName, String.valueOf(parallelism), platform, String.valueOf(throughput), String.valueOf(cluster), String.valueOf(inputSize), String.valueOf(secondsPassed)};
+    public void register(String expType, double throughput, String expName, String cluster, long inputSize, long secondsPassed){
+        String[] row = new String[]{expType, expName, String.valueOf(parallelism), platform, String.valueOf(throughput), cluster, String.valueOf(inputSize), String.valueOf(secondsPassed)};
         writer.writeNext(row);
         try {
             writer.flush();

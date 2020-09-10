@@ -1,4 +1,4 @@
-package event;
+package ee.ut.cs.dsg.esper.d2ia.event;
 
 public class SpeedEvent extends RawEvent {
     public SpeedEvent(String k, long ts, double v) {

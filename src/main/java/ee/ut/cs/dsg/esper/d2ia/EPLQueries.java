@@ -1,4 +1,4 @@
-package esper;
+package ee.ut.cs.dsg.esper.d2ia;
 
 public class EPLQueries {
 
@@ -57,21 +57,6 @@ public class EPLQueries {
             "   insert into ResultStream select avg(value) as value, first(timestamp) as first_ts, last(timestamp) as last_ts, key as key, count(*) as count  from SpeedEvent#expr_batch(avg(value) < 67.0,false) ;" +
                     "   @name('Aggregate')" +
                     "   select value, first_ts, last_ts, key from ResultStream(value>=67.0 and count>=2)" ;
-//            "   insert into ResultSpeed select * from SpeedEvent\n" +
-//            "       match_recognize (\n" +
-//            "       partition by key \n" +
-//            "       measures (sum(B.value)+A.value)/(count(B.value)+1) as value, last(B.timestamp) as last_ts, A.timestamp as first_ts, A.key as key \n" +
-//            "       after match skip to next row " +
-//            "       pattern (A B+ C) \n" +
-//            "       define \n" +
-//            "           A as A.value>=67.0," +
-//            "           C as  (A.value + B.sumOf(i => i.value) )/ (A.countOf()+1) >= 67.0 and ((B.sumOf(i => i.value)+A.value + C.value) / (A.countOf()+2)) < 67.0" +
-//            ");" +
-//            "   create context SegmentedByKey partition by key from ResultSpeed; \n" +
-//            "   context SegmentedByKey create variable long last_timestamp = 0L;"+
-//                    "   context SegmentedByKey insert into Result select * from ResultSpeed(first_ts>last_timestamp);" +
-//            "   context SegmentedByKey on ResultSpeed(first_ts>last_timestamp) set last_timestamp=last_ts; " +
-//                    "@name('Aggregate') select * from Result;" ;
 
     public static String query(String name){
         switch (name){

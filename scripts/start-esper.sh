@@ -16,6 +16,7 @@ maxevents_opt=""
 query_opt=""
 rate_opt=""
 duration_opt=""
+file_opt=""
 
 bootstrap=""
 topic=""
@@ -24,8 +25,9 @@ maxevents=""
 query=""
 rate=""
 duration=""
+file=""
 
-while getopts "b:t:e:m:q:r:d:" arg;
+while getopts "b:t:e:m:q:r:d:f:" arg;
 do
   case ${arg} in
     b )
@@ -56,6 +58,10 @@ do
       duration=$OPTARG
       duration_opt="--duration"
       echo $rate;;
+    f )
+      file=$OPTARG
+      file_opt="--file"
+      echo $rate;;
     * )
       echo "$arg is an invalid flag";;
   esac
@@ -66,5 +72,5 @@ done
 # Execute producer
 echo "Start loading:"
 echo ${bootstrap_opt} ${bootstrap} ${topic_opt} ${topic} ${exp_opt} ${exp} ${maxevents_opt} ${maxevents} ${query_opt} ${query} ${rate_opt} ${rate}
-java -Xmx20g -cp $PROJECT_DIR/target/ICEP-esper-1.0-SNAPSHOT-jar-with-dependencies.jar esper.KafkaAdaptedEsper ${bootstrap_opt} ${bootstrap} ${topic_opt} ${topic} ${exp_opt} ${exp} ${maxevents_opt} ${maxevents} ${query_opt} ${query} ${rate_opt} ${rate} ${duration_opt} ${duration} &> esper.out &
+java -Xmx20g -cp $PROJECT_DIR/target/ICEP-ee.ut.cs.esper-1.0-SNAPSHOT-jar-with-dependencies.jar ee.ut.cs.esper.KafkaAdaptedEsper ${bootstrap_opt} ${bootstrap} ${topic_opt} ${topic} ${exp_opt} ${exp} ${maxevents_opt} ${maxevents} ${query_opt} ${query} ${rate_opt} ${rate} ${duration_opt} ${duration} ${file_opt} ${file}&> esper.out &
 echo "Producer finished"
