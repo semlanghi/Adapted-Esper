@@ -1,4 +1,4 @@
-package ee.ut.cs.dsg.esper.d2ia;
+package ee.ut.cs.dsg.esperadapter.queries;
 
 public class EPLQueries {
 

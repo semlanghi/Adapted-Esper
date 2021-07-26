@@ -1,11 +1,11 @@
-package ee.ut.cs.dsg.esper.environment;
+package ee.ut.cs.dsg.esperadapter.environment;
 
 import com.espertech.esper.common.internal.collection.Pair;
 import com.espertech.esper.runtime.client.EPRuntime;
 import com.espertech.esper.runtime.client.EPUndeployException;
-import ee.ut.cs.dsg.esper.environment.adapters.EsperCustomAdapter;
-import ee.ut.cs.dsg.esper.environment.adapters.FileEsperCustomAdapter;
-import ee.ut.cs.dsg.esper.environment.adapters.KafkaEsperCustomAdapter;
+import ee.ut.cs.dsg.esperadapter.environment.adapters.EsperCustomAdapter;
+import ee.ut.cs.dsg.esperadapter.environment.adapters.FileEsperCustomAdapter;
+import ee.ut.cs.dsg.esperadapter.environment.adapters.KafkaEsperCustomAdapter;
 
 import java.time.Duration;
 import java.util.Properties;

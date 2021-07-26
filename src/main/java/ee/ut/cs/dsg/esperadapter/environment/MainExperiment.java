@@ -1,9 +1,9 @@
-package ee.ut.cs.dsg.esper.environment;
+package ee.ut.cs.dsg.esperadapter.environment;
 
 import com.espertech.esper.common.internal.collection.Pair;
-import ee.ut.cs.dsg.esper.d2ia.event.SpeedEvent;
-import ee.ut.cs.dsg.esper.environment.adapters.EsperCustomAdapterConfig;
-import ee.ut.cs.dsg.esper.util.Util;
+import ee.ut.cs.dsg.esperadapter.queries.event.SpeedEvent;
+import ee.ut.cs.dsg.esperadapter.environment.adapters.EsperCustomAdapterConfig;
+import ee.ut.cs.dsg.esperadapter.util.Util;
 import org.apache.flink.api.java.utils.ParameterTool;
 import java.util.Properties;
 

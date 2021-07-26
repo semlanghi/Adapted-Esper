@@ -1,4 +1,4 @@
-package ee.ut.cs.dsg.esper.environment.adapters;
+package ee.ut.cs.dsg.esperadapter.environment.adapters;
 
 import com.espertech.esper.common.internal.collection.Pair;
 
@@ -18,7 +18,7 @@ public interface EsperCustomAdapter<V,E> {
 
     /**
      * This is the only method of the adapter. It is called by the
-     * {@link ee.ut.cs.dsg.esper.environment.AdaptedEsperEnvironment#start(Function)} method.
+     * {@link ee.ut.cs.dsg.esperadapter.environment.AdaptedEsperEnvironment#start(Function)} method.
      * It generally involves a continuous flow of events that are sent to the Esper Runtime.
      *
      * @see com.espertech.esper.runtime.client.EPRuntime

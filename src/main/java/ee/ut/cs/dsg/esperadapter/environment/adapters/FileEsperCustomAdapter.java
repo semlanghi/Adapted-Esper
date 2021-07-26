@@ -1,9 +1,9 @@
-package ee.ut.cs.dsg.esper.environment.adapters;
+package ee.ut.cs.dsg.esperadapter.environment.adapters;
 
 import com.espertech.esper.common.client.EventSender;
 import com.espertech.esper.common.internal.collection.Pair;
 import com.espertech.esper.runtime.client.EPEventService;
-import ee.ut.cs.dsg.esper.util.PerformanceFileBuilder;
+import ee.ut.cs.dsg.esperadapter.util.PerformanceFileBuilder;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

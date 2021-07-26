@@ -1,4 +1,4 @@
-package ee.ut.cs.dsg.esper.util;
+package ee.ut.cs.dsg.esperadapter.util;
 
 import com.espertech.esper.common.client.EventBean;
 import com.espertech.esper.runtime.client.EPRuntime;

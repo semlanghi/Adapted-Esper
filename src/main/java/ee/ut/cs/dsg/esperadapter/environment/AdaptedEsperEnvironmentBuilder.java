@@ -1,4 +1,4 @@
-package ee.ut.cs.dsg.esper.environment;
+package ee.ut.cs.dsg.esperadapter.environment;
 
 import com.espertech.esper.common.client.EPCompiled;
 import com.espertech.esper.common.client.configuration.Configuration;
@@ -7,9 +7,9 @@ import com.espertech.esper.compiler.client.EPCompileException;
 import com.espertech.esper.compiler.client.EPCompiler;
 import com.espertech.esper.compiler.client.EPCompilerProvider;
 import com.espertech.esper.runtime.client.*;
-import ee.ut.cs.dsg.esper.d2ia.EPLQueries;
-import ee.ut.cs.dsg.esper.environment.adapters.EsperCustomAdapterConfig;
-import ee.ut.cs.dsg.esper.util.LoggingListener;
+import ee.ut.cs.dsg.esperadapter.queries.EPLQueries;
+import ee.ut.cs.dsg.esperadapter.environment.adapters.EsperCustomAdapterConfig;
+import ee.ut.cs.dsg.esperadapter.util.LoggingListener;
 
 import java.io.File;
 import java.io.IOException;

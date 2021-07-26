@@ -1,6 +1,6 @@
-package ee.ut.cs.dsg.esper.util;
+package ee.ut.cs.dsg.esperadapter.util;
 
-import ee.ut.cs.dsg.esper.environment.adapters.EsperCustomAdapterConfig;
+import ee.ut.cs.dsg.esperadapter.environment.adapters.EsperCustomAdapterConfig;
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.IntegerDeserializer;

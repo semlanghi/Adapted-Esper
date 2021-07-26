@@ -1,4 +1,4 @@
-package ee.ut.cs.dsg.esper.environment.adapters;
+package ee.ut.cs.dsg.esperadapter.environment.adapters;
 
 /**
  * This class is used for the configuration of Esper experiments.
